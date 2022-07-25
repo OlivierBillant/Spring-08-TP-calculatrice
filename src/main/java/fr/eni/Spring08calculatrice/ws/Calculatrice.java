@@ -1,11 +1,14 @@
 package fr.eni.Spring08calculatrice.ws;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.eni.Spring08calculatrice.bll.CalculManager;
+import fr.eni.Spring08calculatrice.bo.Calcul;
 
 @RestController
 public class Calculatrice {
@@ -21,5 +24,10 @@ public class Calculatrice {
 		
 		return calculManager.calculate(operand1, operateur, operand2);
 		
+	}
+	
+	@GetMapping("/liste-calculs")
+	public ArrayList<Calcul> afficher(){
+		return calculManager.getCalculs();
 	}
 }

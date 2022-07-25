@@ -32,8 +32,7 @@ public class CalculManagerImpl implements CalculManager {
 
 	@Override
 	public ArrayList<Calcul> getCalculs() {
-		// TODO Auto-generated method stub
-		return null;
+		return (ArrayList<Calcul>) calculDao.findAll();
 	}
 
 }
