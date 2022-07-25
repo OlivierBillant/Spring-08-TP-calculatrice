@@ -15,10 +15,10 @@ public class Calculatrice {
 			@PathVariable("operand2") Integer operand2) {
 		Integer result = 0;
 		switch (operateur) {
-		case "+": result = operand1 + operand2;break;
-		case "-": result = operand1 - operand2;break;
-		case "*": result = operand1 * operand2;break;
-		case "/": result = operand1 / operand2;break;
+		case "plus": result = operand1 + operand2;break;
+		case "minus": result = operand1 - operand2;break;
+		case "times": result = operand1 * operand2;break;
+		case "by": result = operand1 / operand2;break;
 		default: break;
 		}
 		return result;
