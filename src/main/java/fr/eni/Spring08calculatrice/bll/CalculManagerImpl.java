@@ -35,8 +35,13 @@ public class CalculManagerImpl implements CalculManager {
 		}
 		Calcul calcul = new Calcul(operand1, operateur, operand2);
 		calcul.setResultat(result);
-		calculDao.save(calcul);
+		addCalcul(calcul);
 		return calcul.getResultat();
+	}
+
+	@Override
+	public void addCalcul(Calcul calcul) {
+		calculDao.save(calcul);
 	}
 
 	@Override
@@ -52,6 +57,11 @@ public class CalculManagerImpl implements CalculManager {
 	@Override
 	public Calcul getUnCalcul(Integer id) {
 		return calculDao.findById(id).orElse(null);
+	}
+
+	@Override
+	public void editCalcul(Calcul calcul) {
+		calculDao.save(calcul);		
 	}
 
 }

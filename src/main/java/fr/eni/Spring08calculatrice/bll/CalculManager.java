@@ -9,4 +9,6 @@ public interface CalculManager {
 	public ArrayList<Calcul> getCalculs();
 	public void effacerCalcul(Integer id);
 	public Calcul getUnCalcul(Integer id);
+	public void addCalcul(Calcul calcul);
+	public void editCalcul(Calcul calcul);
 }
